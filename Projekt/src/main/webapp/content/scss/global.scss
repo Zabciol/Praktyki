@@ -2,7 +2,14 @@
 @import '~bootstrap/scss/functions';
 @import '~bootswatch/dist/cyborg/variables';
 @import '~bootstrap/scss/variables';
+// =====Kolory=========
 
+
+$BriteColor: #0164C1;
+$DarkBrieteColor: #004077;
+
+
+//==================
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
@@ -34,18 +41,32 @@ Browser Upgrade Prompt
   padding: 0.2em 0;
 }
 
+
 /* ==========================================================================
 Generic styles
 ========================================================================== */
 
 /* other generic styles */
 
-.jh-card {
+.card {
+  margin-top: 50px;
   padding: 1.5%;
-  margin-top: 20px;
-  border: none;
+  border-radius: 20px;
+  background-color: $DarkBrieteColor;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 1px  $BriteColor;
 }
 
+
+.jh-card {
+  margin-top: 200px;
+}
+
+.knowUsBetter-card{
+height: 300px;
+}
 .error {
   color: white;
   background-color: red;
@@ -89,6 +110,12 @@ Generic styles
 /* ==========================================================================
 Custom alerts for notification
 ========================================================================== */
+.alert-success{
+  width: 40%;
+}
+
+
+
 .alerts {
   .alert {
     text-overflow: ellipsis;
@@ -184,6 +211,7 @@ ui bootstrap tweaks
 
 .dropdown-menu {
   padding-left: 0px;
+  z-index: 10;
 }
 
 /* ==========================================================================

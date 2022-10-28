@@ -1,25 +1,13 @@
-<div class="row">
-  <div class="col-md-3">
-    <span class="hipster img-fluid rounded"></span>
-  </div>
+<div class="d-flex justify-content-center">
+  <div class="col-md-9 text-center">
+    <h1 class="display-4">
+      <span id="home-logged-message" *ngIf="account"> Witaj {{ account.login }} w BriteCloud </span>
+      <span *ngIf="account == null" > Witaj w BriteCloud </span>
+    </h1>
 
-  <div class="col-md-9">
-    <h1 class="display-4"><span>Witamy, Java Hipsterze!</span> (Projekt)</h1>
-
-    <p class="lead">To jest twoja strona domowa</p>
-
-    <div [ngSwitch]="account !== null">
+    <div [ngSwitch]="account !== null" class="d-flex justify-content-center">
       <div class="alert alert-success" *ngSwitchCase="true">
         <span id="home-logged-message" *ngIf="account">Jesteś zalogowany jako użytkownik "{{ account.login }}".</span>
-      </div>
-
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span>Jeśli chcesz się </span>
-        <a class="alert-link" (click)="login()">zalogować</a
-        ><span
-          >, możesz spróbować któregoś z domyślnych kont:<br />- Administrator (login="admin" i hasło="admin") <br />- Użytkownik
-          (login="user" i hasło="user").</span
-        >
       </div>
 
       <div class="alert alert-warning" *ngSwitchCase="false">
@@ -28,27 +16,5 @@
       </div>
     </div>
 
-    <p>Jeśli masz jakiekolwiek pytania na temat JHipster:</p>
-
-    <ul>
-      <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">Strona domowa JHipster</a></li>
-      <li>
-        <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">JHipster na Stack Overflow</a>
-      </li>
-      <li>
-        <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer"
-          >JHipster bug tracker</a
-        >
-      </li>
-      <li>
-        <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">Publiczny chat room JHipster</a>
-      </li>
-      <li><a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">skontaktuj się z @jhipster na Twitterze</a></li>
-    </ul>
-
-    <p>
-      <span>Jeśli lubisz JHipster, nie zapomnij dać nam gwiazdki na</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">GitHubie</a>!
-    </p>
   </div>
 </div>
