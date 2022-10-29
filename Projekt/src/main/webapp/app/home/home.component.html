@@ -2,7 +2,7 @@
   <div class="col-md-9 text-center">
     <h1 class="display-4">
       <span id="home-logged-message" *ngIf="account"> Witaj {{ account.login }} w BriteCloud </span>
-      <span *ngIf="account == null" > Witaj w BriteCloud </span>
+      <span *ngIf="account == null"> Witaj w BriteCloud </span>
     </h1>
 
     <div [ngSwitch]="account !== null" class="d-flex justify-content-center">
@@ -15,6 +15,5 @@
         <a class="alert-link" routerLink="account/register">Zarejestruj się</a>
       </div>
     </div>
-
   </div>
 </div>

@@ -5,5 +5,5 @@ import { CloudComponent } from './cloud.component';
 export const navbarRoute: Route = {
   path: '',
   component: CloudComponent,
-  outlet: 'navbar',
+  outlet: 'cloud',
 };
