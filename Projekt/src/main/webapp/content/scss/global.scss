@@ -4,10 +4,8 @@
 @import '~bootstrap/scss/variables';
 // =====Kolory=========
 
-
-$BriteColor: #0164C1;
+$BriteColor: #0164c1;
 $DarkBrieteColor: #004077;
-
 
 //==================
 /* ==============================================================
@@ -41,7 +39,6 @@ Browser Upgrade Prompt
   padding: 0.2em 0;
 }
 
-
 /* ==========================================================================
 Generic styles
 ========================================================================== */
@@ -56,16 +53,15 @@ Generic styles
   width: 70%;
   left: 50%;
   transform: translateX(-50%);
-  border: solid 1px  $BriteColor;
+  border: solid 1px $BriteColor;
 }
-
 
 .jh-card {
   margin-top: 200px;
 }
 
-.knowUsBetter-card{
-height: 300px;
+.jh-card-second {
+  height: 300px;
 }
 .error {
   color: white;
@@ -110,11 +106,9 @@ height: 300px;
 /* ==========================================================================
 Custom alerts for notification
 ========================================================================== */
-.alert-success{
+.alert-success {
   width: 40%;
 }
-
-
 
 .alerts {
   .alert {
