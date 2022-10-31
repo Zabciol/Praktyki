@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -11,17 +11,17 @@ import { Account } from 'app/core/auth/account.model';
   templateUrl: './cloud.component.html',
   styleUrls: ['./cloud.component.scss'],
 })
-export class CloudComponent implements OnInit, OnDestroy {
+export class CloudComponent implements OnInit {
+  account: Account | null = null; 
   
-    ngOnInit(): void {
-     
-    }
+  private readonly destroy$ = new Subject<void>();
   
-    login(): void {
-      
-    }
-  
-    ngOnDestroy(): void {
-     
-    }
+  constructor(private accountService: AccountService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.accountService
+      .getAuthenticationState()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(account => (this.account = account));
+  }
   }

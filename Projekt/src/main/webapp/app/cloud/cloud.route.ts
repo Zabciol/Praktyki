@@ -2,7 +2,7 @@ import { Route } from '@angular/router';
 
 import { CloudComponent } from './cloud.component';
 
-export const navbarRoute: Route = {
+export const cloudRoute: Route = {
   path: '',
   component: CloudComponent,
   outlet: 'cloud',

@@ -1,5 +1,5 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import locale from '@angular/common/locales/pl';
 import { BrowserModule, Title } from '@angular/platform-browser';
@@ -23,12 +23,15 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ErrorComponent } from './layouts/error/error.component';
+import { CloudModule } from './cloud/cloud.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     SharedModule,
     HomeModule,
+    CommonModule,
+    CloudModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     AppRoutingModule,
     // Set this to true to enable service worker (PWA)
@@ -50,6 +53,6 @@ export class AppModule {
     applicationConfigService.setEndpointPrefix(SERVER_API_URL);
     registerLocaleData(locale);
     iconLibrary.addIcons(...fontAwesomeIcons);
-    dpConfig.minDate = { year: dayjs().subtract(100, 'year').year(), month: 1, day: 1 };
+    dpConfig.minDate = { year: dayjs().subtract(100, 'year').year(), month: 1, day: 1 }; 
   }
 }

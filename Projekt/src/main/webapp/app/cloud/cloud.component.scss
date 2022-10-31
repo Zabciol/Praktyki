@@ -1,0 +1,15 @@
+@import '../../content/scss/colors.scss';
+
+.dropFilesSpace{
+    width: 150px;
+    height: 200px;
+    border-radius: 20px;
+    border: 1px solid $BriteColor;
+    background-color: $DropHere;
+}
+
+.insideCard{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
