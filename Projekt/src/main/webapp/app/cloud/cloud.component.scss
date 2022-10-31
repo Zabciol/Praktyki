@@ -1,8 +1,9 @@
 @import '../../content/scss/colors.scss';
 
 .dropFilesSpace{
-    width: 150px;
-    height: 200px;
+    position: relative;
+    width: 100%;
+    height: 170px;
     border-radius: 20px;
     border: 1px solid $BriteColor;
     background-color: $DropHere;
@@ -12,4 +13,9 @@
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+}
+.dropHere{
+    font-weight: 800;
+    color: $DarkBrieteColor;
+    font-size: 5em;
 }

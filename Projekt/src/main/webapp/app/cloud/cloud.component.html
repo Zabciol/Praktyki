@@ -1,9 +1,11 @@
-<div class="d-flex justify-content-center insideCard">
+<div class=" justify-content-center">
         <div *ngIf="account" >
             <h1>
               Prześlij pliki
             </h1>
-            <div class="dropFilesSpace"></div>
+            <div class="dropFilesSpace">
+              <span class="dropHere">Upuść tutaj</span>
+            </div>
         </div>
 
         <div *ngIf="account == null" >
