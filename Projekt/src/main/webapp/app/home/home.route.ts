@@ -6,6 +6,6 @@ export const HOME_ROUTE: Route = {
   path: '',
   component: HomeComponent,
   data: {
-    pageTitle: 'Witamy w BriteCloud',
+    pageTitle: 'Witamy, Java Hipsterze!',
   },
 };
