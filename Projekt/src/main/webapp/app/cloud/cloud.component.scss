@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 5rem;
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -19,6 +20,13 @@
     font-weight: 800;
     color: $DarkBrieteColor;
     font-size: 6rem;
+  }
+
+  &__Input{
+    position: fixed;
+    opacity: 0;
+    width: 96%;
+    height: 87%;
   }
 }
 .MeetUsBetter {

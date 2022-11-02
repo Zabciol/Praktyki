@@ -1,8 +1,16 @@
 <div class="container text-center">
-  <div class="row dropFiles">
-    <div *ngIf="account" class="col align-self-center dropFiles__Space">
-      <span class="dropFiles__Text">Upuść tutaj</span>
-    </div>
+  <div class="row dropFiles"  *ngIf="account">
+    <div class="col align-self-center dropFiles__Space">
+      <input class="dropFiles__Input"
+        type="file"
+        (change)="getFile($event)"
+        #fileInput>
+      <!-- <jhi-file *ngFor="let file of files" [file] = "file" ></jhi-file>-->
+  </div>
+  <div class="row" *ngIf="file">
+    <!--<span class="col-10 align-self-left" > Nazwa pliku: {{file.name}}</span>
+    <button class="col-2 align-self-right">Wyślij</button>-->
+  </div>
   </div>
 
   <div *ngIf="account == null">

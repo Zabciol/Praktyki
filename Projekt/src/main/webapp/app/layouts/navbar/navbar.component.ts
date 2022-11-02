@@ -6,6 +6,7 @@ import { Account } from 'app/core/auth/account.model';
 import { AccountService } from 'app/core/auth/account.service';
 import { LoginService } from 'app/login/login.service';
 import { EntityNavbarItems } from 'app/entities/entity-navbar-items';
+//import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'jhi-navbar',
@@ -19,11 +20,13 @@ export class NavbarComponent implements OnInit {
   version = '';
   account: Account | null = null;
   entitiesNavbarItems: any[] = [];
+  isNavBurger: boolean = false;
+ 
 
   constructor(
     private loginService: LoginService,
     private accountService: AccountService,
-    private router: Router
+    private router: Router,
   ) {
     if (VERSION) {
       this.version = VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`;
@@ -32,7 +35,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.entitiesNavbarItems = EntityNavbarItems;
-
+    
 
     this.accountService.getAuthenticationState().subscribe(account => {
       this.account = account;
@@ -56,4 +59,11 @@ export class NavbarComponent implements OnInit {
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
+
+ 
+
+
+
+
+
 }

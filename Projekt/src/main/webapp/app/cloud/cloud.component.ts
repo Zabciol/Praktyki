@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
@@ -13,10 +14,17 @@ import { Account } from 'app/core/auth/account.model';
 })
 export class CloudComponent implements OnInit {
   account: Account | null = null; 
+  file:any;
+
+  files:any[] = []
   
   private readonly destroy$ = new Subject<void>();
   
-  constructor(private accountService: AccountService, private router: Router) {}
+  constructor(
+    private accountService: AccountService,
+    private router: Router,
+    private http: HttpClient
+    ) {}
 
   ngOnInit(): void {
     this.accountService
@@ -24,4 +32,25 @@ export class CloudComponent implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe(account => (this.account = account));
   }
+
+  getFile(event: any){
+    this.file = event.target.files[0];
+    console.log("file: ", this.file)
+    this.uploadFile();
+  }
+
+  uploadFile() {
+    let formData = new FormData();
+    formData.set('file', this.file);
+
+    this.http
+    .post('/api/files/' , formData)
+    .subscribe(getAllFiles());
+  }
+
+  getAllFiles(){
+
+    
+  }
+  
   }
