@@ -14,6 +14,7 @@ import { Account } from 'app/core/auth/account.model';
 })
 export class CloudComponent implements OnInit {
   account: Account | null = null; 
+
   file:any;
 
   files:any[] = []
@@ -42,15 +43,14 @@ export class CloudComponent implements OnInit {
   uploadFile() {
     let formData = new FormData();
     formData.set('file', this.file);
+    //this.files.push(formData)
 
     this.http
     .post('/api/files/' , formData)
-    .subscribe(getAllFiles());
+    .subscribe(this.getAllFiles);
   }
 
   getAllFiles(){
-
-    
   }
   
   }
