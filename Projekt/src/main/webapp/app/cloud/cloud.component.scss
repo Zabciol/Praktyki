@@ -20,7 +20,7 @@
     font-size: 4.5rem;
   }
 
-  &__Input{
+  &__Input {
     position: absolute;
     opacity: 0;
     width: 100%;
@@ -28,7 +28,7 @@
     z-index: 10;
     right: 0;
   }
-  &__EmptySpace{
+  &__EmptySpace {
     height: 100px;
   }
 }
@@ -39,7 +39,7 @@
   }
 }
 
-.file{
+.file {
   width: 100px;
   height: 100px;
   margin: 10px 0px;
