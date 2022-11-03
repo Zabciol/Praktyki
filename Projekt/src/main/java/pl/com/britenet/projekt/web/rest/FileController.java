@@ -29,6 +29,6 @@ public class FileController {
     public ResponseEntity<String> saveFiles(@RequestParam("file")MultipartFile file) {
 
         log.info("przyjecie pliku p romiarze: {}", file.getSize());
-    return ResponseEntity.ok("done");
+        return ResponseEntity.ok("done");
     }
 }

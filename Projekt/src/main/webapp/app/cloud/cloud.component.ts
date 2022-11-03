@@ -14,19 +14,14 @@ import { Account } from 'app/core/auth/account.model';
   styleUrls: ['./cloud.component.scss'],
 })
 export class CloudComponent implements OnInit {
-  account: Account | null = null; 
-  
-  private readonly destroy$ = new Subject<void>();
-  
-  constructor(
-    private accountService: AccountService,
-    private router: Router,
-    private http: HttpClient
-    ) {}
+  account: Account | null = null;
 
-    public file:any;
-    public files:any[] = []
-   
+  private readonly destroy$ = new Subject<void>();
+
+  constructor(private accountService: AccountService, private router: Router, private http: HttpClient) {}
+
+  public file: any;
+  public files: any[] = [];
 
   ngOnInit(): void {
     this.accountService
@@ -35,25 +30,24 @@ export class CloudComponent implements OnInit {
       .subscribe(account => (this.account = account));
   }
 
-  getFile(event: any){
+  getFile(event: any) {
     this.file = event.target.files[0];
     // this.file = event.target.files[0];
-    console.log("file: ", this.file)
+    console.log('file: ', this.file);
     this.uploadFile();
   }
 
   uploadFile() {
     let formData = new FormData();
-    formData.set('file',this.file);
+    formData.set('file', this.file);
     //this.files.push(formData)
-    this.files.push(this.file);
-    this.http
-    .post('/api/addNewFile/' , formData)
-    .subscribe(this.getFiles);
+    if (this.file.name != null) {
+      this.files.push(this.file);
+      this.http.post('/api/addNewFile/', formData).subscribe(this.getFiles);
+    } else {
+      console.log('Wybierz plik');
+    }
   }
 
-  getFiles(){
-
-  }
-
-  }
+  getFiles() {}
+}

@@ -1,20 +1,14 @@
-<div class="container text-center dropFiles" ng-switch="CzyPuste">
-  <div class="row align-self-center dropFiles__Space"  *ngIf="account">
-    <input class="dropFiles__Input align-self-center"
-        type="file"
-        (change)="getFile($event)"
-        #fileInput
-        ng-model="CzyPuste"
-        value="nie_Jest"
-        >
-      <!--<jhi-file *ngFor="let file of files" [file]="file" ></jhi-file>-->
-      <div *ngFor="let file of files" class="col-2 file" >
-            <img src="../../content/images/25307.png" alt="plik">
-            <span>{{file.name}}</span>
-      </div> 
-      <div *ngIf="files.length === 0" class="dropFiles__EmptySpace">
-        <span class="dropFiles__Text align-self-center">DROP HERE</span>
-      </div>
+<div class="container text-center dropFiles">
+  <div class="row align-self-center dropFiles__Space" *ngIf="account">
+    <input class="dropFiles__Input align-self-center" type="file" (change)="getFile($event)" #fileInput />
+    <!--<jhi-file *ngFor="let file of files" [file]="file" ></jhi-file>-->
+    <div *ngFor="let file of files" class="col-2 file">
+      <img src="../../content/images/25307.png" alt="plik" />
+      <span>{{ file.name }}</span>
+    </div>
+    <div *ngIf="files.length === 0" class="dropFiles__EmptySpace">
+      <span class="dropFiles__Text align-self-center">DROP HERE</span>
+    </div>
   </div>
   <div *ngIf="account == null">
     <h1>Poznaj nas lepiej</h1>
