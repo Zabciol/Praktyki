@@ -30,13 +30,13 @@ public class FileService {
     }
 
 
-    public File getFile() {
+    public static File getFile() {
         final var file = new File();
         //file.setName("userinput");
         return file;
     }
 
-    public File getFile(String name) {
+    public static File getFile(String name) {
         if (files.containsKey(name)) {
             return files.get(name);
         }
@@ -45,11 +45,11 @@ public class FileService {
         }
     }
 
-    public void addFile(File file) {
+    public static void addFile(File file) {
         files.put(file.getName(), file);
     }
 
-    public void deleteFile(String name) {
+    public static void deleteFile(String name) {
         if (files.containsKey(name)) {
             files.remove(name);
         }
