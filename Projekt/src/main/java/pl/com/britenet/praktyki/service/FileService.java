@@ -32,7 +32,7 @@ public class FileService {
 
     public File getFile() {
         final var file = new File();
-        file.setName("");
+        //file.setName("userinput");
         return file;
     }
 
@@ -54,5 +54,4 @@ public class FileService {
             files.remove(name);
         }
     }
-
 }
