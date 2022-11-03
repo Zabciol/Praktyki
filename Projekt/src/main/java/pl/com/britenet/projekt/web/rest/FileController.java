@@ -1,5 +1,6 @@
 package pl.com.britenet.projekt.web.rest;
 
+import java.io.File;
 import java.util.*;
 import java.util.Collections;
 import org.slf4j.Logger;
@@ -20,12 +21,13 @@ import tech.jhipster.web.util.PaginationUtil;
 @RestController
 @RequestMapping("/api")
 
-public class CloudController {
+public class FileController {
 
-    private final Logger log = LoggerFactory.getLogger(CloudController.class);
+    private final Logger log = LoggerFactory.getLogger(FileController.class);
 
-    @PostMapping ("/files")
+    @PostMapping ("/addNewFile")
     public ResponseEntity<String> saveFiles(@RequestParam("file")MultipartFile file) {
+
         log.info("przyjecie pliku p romiarze: {}", file.getSize());
     return ResponseEntity.ok("done");
     }

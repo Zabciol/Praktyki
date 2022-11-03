@@ -15,10 +15,6 @@ import { Account } from 'app/core/auth/account.model';
 })
 export class CloudComponent implements OnInit {
   account: Account | null = null; 
-
-  file:any;
-
-  files:any[] = []
   
   private readonly destroy$ = new Subject<void>();
   
@@ -27,6 +23,10 @@ export class CloudComponent implements OnInit {
     private router: Router,
     private http: HttpClient
     ) {}
+
+    public file:any;
+    public files:any[] = []
+   
 
   ngOnInit(): void {
     this.accountService
@@ -37,21 +37,23 @@ export class CloudComponent implements OnInit {
 
   getFile(event: any){
     this.file = event.target.files[0];
+    // this.file = event.target.files[0];
     console.log("file: ", this.file)
     this.uploadFile();
   }
 
   uploadFile() {
     let formData = new FormData();
-    formData.set('file', this.file);
+    formData.set('file',this.file);
     //this.files.push(formData)
-
+    this.files.push(this.file);
     this.http
-    .post('/api/files/' , formData)
-    .subscribe(this.getAllFiles);
+    .post('/api/addNewFile/' , formData)
+    .subscribe(this.getFiles);
   }
 
-  getAllFiles(){
+  getFiles(){
+
   }
-  
+
   }
