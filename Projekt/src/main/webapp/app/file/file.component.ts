@@ -16,7 +16,7 @@ import { CloudComponent } from 'app/cloud/cloud.component';
 export class FileComponent {
         
     @Input()
-    public file:any[] = [];
+    
 
 
     getFiles(){

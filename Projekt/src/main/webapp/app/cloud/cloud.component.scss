@@ -1,13 +1,12 @@
 @import '../../content/scss/colors.scss';
 
 .dropFiles {
+  display: flex;
+  justify-content: center;
+  align-self: center;
   &__Space {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 5rem;
+    padding: 2rem;
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -23,15 +22,33 @@
   }
 
   &__Input{
-    position: fixed;
+    position: absolute;
     opacity: 0;
-    width: 96%;
-    height: 87%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    right: 0;
+  }
+  &__EmptySpace{
+    height: 100px;
   }
 }
 .MeetUsBetter {
   padding: 3rem;
 
   &__Text {
+  }
+}
+
+.file{
+  width: 100px;
+  height: 100px;
+  margin: 10px 0px;
+  overflow: hidden;
+  z-index: 20;
+
+  img {
+    width: 80px;
+    height: 80px;
   }
 }
