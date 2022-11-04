@@ -22,6 +22,7 @@ export class CloudComponent implements OnInit {
 
   public file: any;
   public files: any[] = [];
+  public menuToogle: boolean = false;
 
   ngOnInit(): void {
     this.accountService
@@ -50,4 +51,10 @@ export class CloudComponent implements OnInit {
   }
 
   getFiles() {}
+
+
+
+  toogleMenuOnItem(){
+    this.menuToogle != this.menuToogle; 
+  }
 }
