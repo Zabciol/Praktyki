@@ -18,7 +18,7 @@ logging:
     ROOT: DEBUG
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
-    pl.com.britenet.projekt: DEBUG
+    pl.com.britenet.praktyki: DEBUG
 
 spring:
   devtools:
@@ -32,7 +32,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/Projekt?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/project?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
     password:
     hikari:
@@ -82,7 +82,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: NWIyM2IxNTJkYjMwOGNhYmI3ZmQwOTU3OTczOGY0MzQ1YWJiZjUxZjNlZjdjNzMzZWI3MWQ1YmNlYTI1ZTZhN2ZkYTk5NDQwYjAxYzNkYTM0NDk5ZjczNTUwYWY0MmYyZTE3MTdhYjhlNWIwOWRjYTdiYTUzMjRkOWEzNjcyN2Y=
+        base64-secret: YTg0ODk4OGQ4YWFkNzhmNGYyMGVmNDFiMWNjY2M5M2VhMWY2YThlMjIyZDFlNDVmZmVjZmI1MmZhZDYzOWUxMDdkZjBmMzczMWM1NmEzOWRiNGRiNGViODQ0N2ZhMGI4NDBjNWNkYWE0NWE5YjNmNjdlZTQ5MjBkMjc2ZWZiZWE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
