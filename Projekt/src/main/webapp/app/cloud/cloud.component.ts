@@ -43,7 +43,7 @@ export class CloudComponent implements OnInit {
     formData.set('file', this.file);
     //this.files.push(formData)
     if (this.file.name != null) {
-      this.files.push(this.file);
+      this.files.push(formData);
       this.http.post('/api/files', formData).subscribe(this.getFiles);
     } else {
       console.log('Wybierz plik');
