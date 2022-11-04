@@ -44,7 +44,7 @@ export class CloudComponent implements OnInit {
     //this.files.push(formData)
     if (this.file.name != null) {
       this.files.push(this.file);
-      this.http.post('/api/addNewFile/', formData).subscribe(this.getFiles);
+      this.http.post('/api/files', formData).subscribe(this.getFiles);
     } else {
       console.log('Wybierz plik');
     }
@@ -56,5 +56,6 @@ export class CloudComponent implements OnInit {
 
   toogleMenuOnItem(){
     this.menuToogle != this.menuToogle; 
+    console.log("toogle menu item");
   }
 }

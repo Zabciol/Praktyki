@@ -25,7 +25,7 @@ public class FileController {
 
     private final Logger log = LoggerFactory.getLogger(FileController.class);
 
-    @PostMapping ("/addNewFile")
+    @PostMapping ("/files")
     public ResponseEntity<String> saveFiles(@RequestParam("file")MultipartFile file) {
 
         log.info("przyjecie pliku p romiarze: {}", file.getSize());
