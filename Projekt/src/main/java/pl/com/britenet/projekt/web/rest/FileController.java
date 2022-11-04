@@ -1,15 +1,22 @@
 package pl.com.britenet.projekt.web.rest;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import pl.com.britenet.projekt.service.FileService;
-import java.io.File;
+
 import java.util.List;
+import pl.com.britenet.projekt.web.rest.File;
+
 
 @RequestMapping("/api/files")
 @RestController
 public class FileController {
 
-
+    private final Logger log = LoggerFactory.getLogger(FileController.class);
 
     //private final FileService ;
 
@@ -19,11 +26,6 @@ public class FileController {
         return null;
     }
 
-    @PostMapping
-    public void createFile(@RequestBody pl.com.britenet.projekt.web.rest.File file) {
-        FileService.addFile(file);
-
-    }
     @DeleteMapping
     public void  deleteFile(@RequestBody String file)
     {
@@ -34,5 +36,14 @@ public class FileController {
     {
         FileService.getFile(file);
     }
+    @PostMapping
+    public ResponseEntity<File> saveFiles(@RequestParam("file")MultipartFile file) {
 
+        log.info("przyjecie pliku p romiarze: {}", file.getSize());
+        File domainFile = new File();
+        domainFile.setName(file.getName());
+        
+        FileService.addFile(domainFile);
+        return ResponseEntity.ok( domainFile);
+    }
 }
