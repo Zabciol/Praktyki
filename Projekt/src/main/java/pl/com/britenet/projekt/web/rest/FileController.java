@@ -2,7 +2,6 @@ package pl.com.britenet.projekt.web.rest;
 
 import org.springframework.web.bind.annotation.*;
 import pl.com.britenet.projekt.service.FileService;
-
 import java.io.File;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class FileController {
     }
 
     @PostMapping
-    public void createFile(@RequestBody pl.com.britenet.projekt.domain.File file) {
+    public void createFile(@RequestBody pl.com.britenet.projekt.web.rest.File file) {
         FileService.addFile(file);
 
     }

@@ -2,7 +2,7 @@ package pl.com.britenet.projekt.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.com.britenet.projekt.domain.File;
+import pl.com.britenet.projekt.web.rest.File;
 
 import java.util.*;
 
