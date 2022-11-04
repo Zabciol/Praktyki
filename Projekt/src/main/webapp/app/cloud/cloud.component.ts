@@ -23,12 +23,16 @@ export class CloudComponent implements OnInit {
   public file: any;
   public files: any[] = [];
   public menuToogle: boolean = false;
+  public errorMessage: any;
+  public fileDisplay: any;
 
   ngOnInit(): void {
     this.accountService
       .getAuthenticationState()
       .pipe(takeUntil(this.destroy$))
       .subscribe(account => (this.account = account));
+
+
   }
 
   getFile(event: any) {
@@ -44,13 +48,14 @@ export class CloudComponent implements OnInit {
     //this.files.push(formData)
     if (this.file.name != null) {
       this.files.push(formData);
-      this.http.post('/api/files', formData).subscribe(this.getFiles);
+      this.http.post('/api/files', formData).subscribe(this.getFiles)
     } else {
       console.log('Wybierz plik');
     }
   }
 
-  getFiles() {}
+  getFiles() {
+  }
 
 
 

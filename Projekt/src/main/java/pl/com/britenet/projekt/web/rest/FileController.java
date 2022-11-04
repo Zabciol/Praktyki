@@ -41,7 +41,8 @@ public class FileController {
 
         log.info("przyjecie pliku p romiarze: {}", file.getSize());
         File domainFile = new File();
-        domainFile.setName(file.getName());
+        //   domainFile.setName(file.getName());
+        domainFile.setName("dupa");
         
         FileService.addFile(domainFile);
         return ResponseEntity.ok( domainFile);
