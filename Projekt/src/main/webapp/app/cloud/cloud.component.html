@@ -4,13 +4,12 @@
 
 
     <!--Pojedyncze pliki-->
-    <div *ngFor="let file of files" class="col-2 file">
+    <div *ngFor="let file of files" class="col-2 file" (click)="toogleMenuOnItem()">
       <img src="../../content/images/25307.png" alt="plik" />
       <span>{{ file.name }}</span>
 
-      <div class="MenuOnItem">
+      <div class="file__MenuOnItem" *ngIf="menuToogle">
         <input [(ngModel)]="file.name"  type="text">
-        
       </div>
 
     </div>
@@ -21,7 +20,7 @@
       <span class="dropFiles__Text align-self-center">DROP HERE</span>
     </div>
 
-
+    
   </div>
 
 
