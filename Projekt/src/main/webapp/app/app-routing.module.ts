@@ -32,10 +32,13 @@ import { cloudRoute } from './cloud/cloud.route';
         {
           path: '',
           loadChildren: () => import(`./entities/entity-routing.module`).then(m => m.EntityRoutingModule),
+        },{
+          path: '',
+          loadChildren: () => import('./cloud/cloud.module').then(m => m.CloudModule),
         },
         
         navbarRoute,
-        cloudRoute,
+        //cloudRoute,
         ...errorRoute,
       ],
       { enableTracing: DEBUG_INFO_ENABLED }

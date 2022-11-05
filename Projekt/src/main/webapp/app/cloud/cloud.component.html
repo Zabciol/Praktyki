@@ -1,10 +1,29 @@
-<div class="container text-center">
-  <div class="row dropFiles">
-    <div *ngIf="account" class="col align-self-center dropFiles__Space">
-      <span class="dropFiles__Text">Upuść tutaj</span>
+<div class="container text-center dropFiles">
+  <div class="row align-self-center dropFiles__Space" *ngIf="account">
+    <input class="dropFiles__Input align-self-center" type="file" (change)="getFile($event)" #fileInput />
+
+
+    <!--Pojedyncze pliki-->
+    <div *ngFor="let file of files" class="col-2 file" (click)="toogleMenuOnItem()">
+      <img src="../../content/images/25307.png" alt="plik" />
+      <span>{{ file.name }}</span>
+      <div class="file__MenuOnItem" *ngIf="menuToogle">
+        <input [(ngModel)]="file.name"  type="text">
+      </div>
+
     </div>
+
+
+    <!--Jeśli zalogowany ale brak plików-->
+    <div *ngIf="files.length === 0" class="dropFiles__EmptySpace">
+      <span class="dropFiles__Text align-self-center">DROP HERE</span>
+    </div>
+
+    
   </div>
 
+
+  <!--Jeśli użytkownik niezalogowany    Pozaj nas lepiej-->
   <div *ngIf="account == null">
     <h1>Poznaj nas lepiej</h1>
     <div class="MeetUsBetter">
